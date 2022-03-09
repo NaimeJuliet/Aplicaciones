@@ -36,39 +36,29 @@ public class MainActivity extends AppCompatActivity {
         jetusuario.requestFocus();
     }
 
+    public void Ingresar(View view){
+        String usuario, contraseña;
+        usuario=jetusuario.getText().toString();
+        contraseña=jetclave.getText().toString();
+        Conexion_Sqlite admin=new Conexion_Sqlite(this,"concesionario.db",null,1);
+        SQLiteDatabase db=admin.getReadableDatabase();
+        Cursor fila=db.rawQuery("select * from TblCliente where usuario='" + usuario + "'",null);
+        if (fila.moveToNext()){
+            if(contraseña.equals(fila.getString(3))){
+                Intent menu=new Intent(this,MenuActivity.class);
+                startActivity(menu);
+            }else{
+                Toast.makeText(this, "Error en la contraseña", Toast.LENGTH_SHORT).show();
+            }
+        }else{
+            Toast.makeText(this, "El usuario no fue encontrado", Toast.LENGTH_SHORT).show();
+        }
+    }
+
     public void Registrarse(View view){
         Intent intregistrarse=new Intent(this,RegistrarseActivity.class);
         startActivity(intregistrarse);
-        String usuario,clave;
 
-        usuario=jetusuario.getText().toString();
-        clave=jetclave.getText().toString();
-
-        if (usuario.isEmpty() || clave.isEmpty()){
-            Toast.makeText(this, "Ingrese toos los datos", Toast.LENGTH_SHORT).show();
-            jetusuario.requestFocus();
-        }
-        else{
-
-            Conexion_Sqlite admin=new Conexion_Sqlite(this,"concesionario.db",null,1);
-            SQLiteDatabase db=admin.getReadableDatabase();
-
-            Cursor fila=db.rawQuery("select * from TblCliente where usuario='" + usuario + "'" ,null);
-
-            if(fila.moveToNext()){
-                if((fila.getString(2).equals(usuario) ) && (fila.getString(3).equals(clave))){
-                    Intent intMenu = new Intent(this, MenuActivity.class);
-                    startActivity(intMenu);
-                }else{
-                    Toast.makeText(this, "Error en la contraseña", Toast.LENGTH_SHORT).show();
-                    jetclave.requestFocus();
-                }
-             }else{
-                Toast.makeText(this, "El usuario no existe", Toast.LENGTH_SHORT).show();
-                jetusuario.requestFocus();
-            }
-            db.close();
-            }
         }
 
     }

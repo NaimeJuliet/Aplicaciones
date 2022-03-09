@@ -102,7 +102,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:onClick="Registrarse"
+            android:onClick="Ingresar"
             android:textSize="40dp"
             android:text="Ingresar" />
     </LinearLayout>

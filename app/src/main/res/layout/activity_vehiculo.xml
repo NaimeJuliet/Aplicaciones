@@ -179,6 +179,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:onClick="Guardar"
             android:textSize="25dp"
             android:text="Guardar" />
 
@@ -187,8 +188,10 @@
             android:layout_width="wrap_content"
             android:layout_height="65dp"
             android:layout_weight="1"
+            android:onClick="Consulta_vehiculo"
             android:textSize="25dp"
-            android:text="Consultar" />
+            android:text="Consultar"
+            tools:ignore="OnClick" />
     </LinearLayout>
 
     <LinearLayout
@@ -210,6 +213,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:onClick="AnularVehiculo"
             android:textSize="25dp"
             android:text="Anular" />
 
@@ -240,6 +244,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:onClick="Regresar"
             android:textSize="25dp"
             android:text="Regresar" />
     </LinearLayout>

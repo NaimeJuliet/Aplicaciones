@@ -17,7 +17,7 @@ public class Conexion_Sqlite extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL("CREATE TABLE TblCliente(idcliente text primary key," +
         "nomcliente text not null, usuario text not null, clave text not null,activo text not null default 'si')");
         sqLiteDatabase.execSQL("CREATE TABLE TblVehiculo(placa text primary key," +
-                "marca text not null, modelo text not null, color text not null,activo text not null default 'no')");
+                "marca text not null, modelo text not null, color text not null,costo text not null ,activo text not null default 'no')");
     }
 
     @Override

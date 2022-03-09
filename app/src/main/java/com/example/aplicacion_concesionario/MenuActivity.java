@@ -28,6 +28,7 @@ public class MenuActivity extends AppCompatActivity {
         Intent vehiculo = new Intent(this, VehiculoActivity.class);
         startActivity(vehiculo);
     }
+
     public void abrirFactura(View view){
         Intent factura = new Intent(this, FacturaActivity.class);
         startActivity(factura);

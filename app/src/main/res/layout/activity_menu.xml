@@ -49,6 +49,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:onClick="abrirVehiculos"
             android:textSize="35dp"
             android:text="Vehiculos" />
     </LinearLayout>
@@ -72,6 +73,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:onClick="abrirFactura"
             android:textSize="35dp"
             android:text="Facturas" />
     </LinearLayout>
@@ -95,6 +97,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:onClick="listarVehiculos"
             android:textSize="35dp"
             android:text="Listar vehiculos" />
     </LinearLayout>
@@ -118,6 +121,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:onClick="abrirUsuario"
             android:textSize="35dp"
             android:text="Usuario" />
     </LinearLayout>
@@ -140,6 +144,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:onClick="salir"
             android:textSize="35dp"
             android:text="Salir" />
     </LinearLayout>
