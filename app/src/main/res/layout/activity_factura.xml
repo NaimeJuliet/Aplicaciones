@@ -154,6 +154,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:textSize="25dp"
+            android:onClick="Guardar"
             android:text="Guardar" />
 
         <Button
@@ -162,6 +163,7 @@
             android:layout_height="80dp"
             android:layout_weight="1"
             android:textSize="25dp"
+            android:onClick="Consulta_factura"
             android:text="Consultar" />
     </LinearLayout>
 
@@ -185,6 +187,7 @@
             android:layout_height="70dp"
             android:layout_weight="1"
             android:textSize="25dp"
+            android:onClick="AnularFactura"
             android:text="Anular" />
 
         <Button
@@ -215,6 +218,7 @@
             android:layout_height="80dp"
             android:layout_weight="1"
             android:textSize="30dp"
+            android:onClick="Regresar"
             android:text="REgresar" />
     </LinearLayout>
 

@@ -60,8 +60,14 @@ public class VehiculoActivity extends AppCompatActivity {
             registro.put("modelo",modelo);
             registro.put("color",color);
             registro.put("costo",costo);
+            ConsultarVehiculo();
+            if(sw==1){
+                sw=0;
+                resp=db.update("TblVehiculo", registro, "placa='"+placa+"'", null);
+            }else{
+                resp=db.insert("TblVehiculo",null,registro);
+            }
 
-            resp=db.insert("TblVehiculo",null,registro);
             if (resp > 0){
                 Limpiar_campos();
                 Toast.makeText(this, "Registro guardado", Toast.LENGTH_SHORT).show();

@@ -75,7 +75,7 @@ public class RegistrarseActivity extends AppCompatActivity {
                 else{
                     Toast.makeText(this, "Error guardando registro", Toast.LENGTH_SHORT).show();
                 }
-              //  db.close();
+               db.close();
             }
         }
     }
@@ -97,7 +97,7 @@ public class RegistrarseActivity extends AppCompatActivity {
             else {
                 Toast.makeText(this, "Error anulando registro", Toast.LENGTH_SHORT).show();
             }
-         //   db.close();
+          db.close();
         }else{
             Toast.makeText(this, "La identificacion no fue encontrada", Toast.LENGTH_SHORT).show();
         }
@@ -136,7 +136,7 @@ public class RegistrarseActivity extends AppCompatActivity {
             else{
                 Toast.makeText(this, "Registro no hallado", Toast.LENGTH_SHORT).show();
             }
-           // db.close();
+            db.close();
         }
     }
 

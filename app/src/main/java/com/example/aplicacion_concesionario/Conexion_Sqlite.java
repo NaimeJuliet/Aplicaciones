@@ -18,6 +18,10 @@ public class Conexion_Sqlite extends SQLiteOpenHelper {
         "nomcliente text not null, usuario text not null, clave text not null,activo text not null default 'si')");
         sqLiteDatabase.execSQL("CREATE TABLE TblVehiculo(placa text primary key," +
                 "marca text not null, modelo text not null, color text not null,costo text not null ,activo text not null default 'no')");
+        sqLiteDatabase.execSQL("CREATE TABLE TblFactura(codFactura text primary key," +
+                "fecha text not null, idcliente text not null, placa text not null,activo text not null default 'no', " +
+                "constraint pkFctura foreign key (idcliente) references TblCliente(idcliente)," +
+                " foreign key (placa) references TblVehiculo(placa) )");
     }
 
     @Override
@@ -29,6 +33,11 @@ public class Conexion_Sqlite extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL("DROP TABLE TblVehiculo");{
             onCreate(sqLiteDatabase);
         }
+
+        sqLiteDatabase.execSQL("DROP TABLE TblFactura");{
+            onCreate(sqLiteDatabase);
+        }
+
     }
 
 
